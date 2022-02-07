@@ -1,11 +1,11 @@
 # vue-countdown
 Basic on vue-cli.
 
-Started From today and Setting until time with url. 
+Started From today and setting until time with url. 
 
 For Example:
 
-Setting deadline time at 2022/12/31. 
+Setting deadline time at 2022/12/31.
 
 ``http://vue-countdown/?date=2022,12,31``
 
