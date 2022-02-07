@@ -76,7 +76,7 @@
         </div>
     </div>
     <p>
-        UNTIL&nbsp;&nbsp;&nbsp;<span class="flipUnitContainer__futureDate">{{ formatDate(futureDate) }}</span>
+        UNTIL&nbsp;&nbsp;&nbsp;<span class="flipUnitContainer__futureDate">{{ formatDate(this.until) }}</span>
     </p>
 </template>
 
@@ -93,6 +93,7 @@ export default {
     props: ['futureDate'],
     data() {
         return {
+            until: '',
             diff: Date,
             timer: undefined,
 
@@ -134,6 +135,13 @@ export default {
             this.minutes = addZero(m);
             this.seconds = addZero(s);
         },
+        formatUrlDate(date) {
+            let month = date.slice(4, 2),
+                day = date.slice(6, 2),
+                year = date.slice(0, 4);
+
+            return [year, month, day].join(',');
+        },
         formatDate(date) {
             let d = new Date(date),
                 month = (d.getMonth() + 1).toString(),
@@ -168,8 +176,13 @@ export default {
         },
     },
     mounted() {
-        //console.log('component:', this.futureDate);
-        this.diff = new Date(this.futureDate).getTime();
+        let year = this.futureDate.slice(0, 4),
+            month = this.futureDate.slice(4, 6),
+            day = this.futureDate.slice(6, 8);
+            
+        this.until = [year, month, day].join(',');
+
+        this.diff = new Date(this.until).getTime();
         this.getDiff();
         this.timer = setInterval(this.getDiff, 1000);
     },
