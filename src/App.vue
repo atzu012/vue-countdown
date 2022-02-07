@@ -1,14 +1,14 @@
 <template>
-    <Countdown :future-date="date" />
+    <Countdown1 :future-date="date" />
 </template>
 
 <script>
-import Countdown from './components/Countdown.vue';
+import Countdown1 from './components/Countdown.vue';
 
 export default {
     name: 'App',
     components: {
-        Countdown,
+        Countdown1,
     },
     data() {
         return {

@@ -11,5 +11,6 @@ Setting deadline time at 2022/12/31.
 
 See the [demo](https://atzu012.github.io/vue-countdown/?date=20221231) online.
 
+p.s. not work with Safari _(:з」∠)_
 
 *All source from internet.*

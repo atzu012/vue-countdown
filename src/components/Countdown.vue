@@ -135,13 +135,6 @@ export default {
             this.minutes = addZero(m);
             this.seconds = addZero(s);
         },
-        formatUrlDate(date) {
-            let month = date.slice(4, 2),
-                day = date.slice(6, 2),
-                year = date.slice(0, 4);
-
-            return [year, month, day].join(',');
-        },
         formatDate(date) {
             let d = new Date(date),
                 month = (d.getMonth() + 1).toString(),
@@ -149,6 +142,7 @@ export default {
                 year = d.getFullYear().toString();
             if (month.length < 2) month = '0' + month;
             if (day.length < 2) day = '0' + day;
+
             return [year, month, day].join('/');
         },
         formatNum(num) {
